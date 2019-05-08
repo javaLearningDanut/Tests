@@ -26,8 +26,9 @@ public class TestMapPerson {
         person2.setAge(27);
         /**
          *
-         * pentru ca am suprascris metodele equals() si hashCode in clasa Person, atunci cand incerc sa adaug doua obiecte cu aceleasi date, se va
-         * adauga de fapt o singura data, pentru ca este duplicat; in HashMap pot adauga perechi <Key, Value> cu conditia ca Key sa fie diferite
+         * Metoda get(key) din HashMap utilizeaza hashcode-ul key-ului pentru a returna valoarea. Din moment ce am modificat varsta pentru person2, acest lucru va influenta
+         * hashcode-ul key-ului. Atunci cand se cauta (get) o valoare utilizand key-ul "person2", aceasta nu va fi gasita deoarece hashcode-ul key-ului se calculeaza utilizand noua varsta,27
+         * Prin urmare, se va returna null
          *
          */
         System.out.println(persons.get(person2));
